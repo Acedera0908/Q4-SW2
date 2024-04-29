@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+	<title>ICT SW #2</title>
+	<style>
+		body {
+			background-color: #FFC4D1;
+			font-family: "Oxygen", sans-serif;
+			font-size: 15px;
+			color: #6B717E;
+			text-align: center;
+			padding: 20px;
+		}
+		h3 {
+			margin-left: 20px;
+		}
+		.graphic-text-container {
+			display: flex;
+			margin-left: 15px;
+			text-align: center;
+			justify-content: center;
+		}
+		a {
+			font-size: 7px;
+			text-align: left;
+		}
+		.calculating-container-1 {
+			display: flex;
+			font-size: 13px;
+			justify-content: center;
+		}
+		.calculating-container-2 {
+			display: flex;
+			font-size: 13px;
+			justify-content: center;
+		}
+		.btn {
+			width: 500px;
+			height: 50px;
+		}
+		.col-xl-6 p {
+			margin-top: 5px;
+			justify-content: center;
+			font-size: 17px;
+		}
+	</style>
+</head>
+<body>
+		<h1> Calculator </h1> <br> <br>
+		<div class="graphic-text-container">
+			<img src="https://media.tenor.com/PI9d5rV83pwAAAAi/math-lady-math.gif gif" class="img-thumbnail" width="270px" height="270px">
+		<br>
+			<div class="number-box"> <br>
+				<h3> Enter number here: <input type="number" id="num1"> </h3> <br> <br> <br> <br> <br> <br> <br>
+				<h3> Enter number here: <input type="number" id="num2"> </h3>
+			</div>
+		</div>
+		<a href="https://tenor.com/view/math-lady-math-thinking-thinking-hard-equations-gif-4363809809414020764"> Math Lady Thinking (Robot) </a> <br> <br> <br>
+		<div class="calculating-container-1">
+
+			<!-- Addition -->
+			<div class="col-xl-6">
+			<button type="submit" id="calc" class="btn btn-info" onClick="plus()"> Addition </button>
+				<p id="addition"> </p>
+				<script id="addition">
+					function plus (parameter1, parameter2) {
+						// const num1 and num2 determines the values typed in the form above
+						const num1= parseInt(document.getElementById("num1").value);
+						const num2= parseInt(document.getElementById("num2").value);
+						// the process that adds the values together
+						const sum= parseInt(num1 + num2);
+						// total sum
+						document.getElementById("addition").innerHTML="SUM: "+sum;
+					}
+				</script>
+			</div>
+			<!-- Subtraction -->
+			<div class="col-xl-6">
+			<button type="submit" id="calc" class="btn btn-info" onClick="minus()"> Subtraction </button>
+			<p id="subtraction"> </p>
+				<script id="subtraction">
+					function minus (parameter1, parameter2) {
+						const num1= parseInt(document.getElementById("num1").value);
+						const num2= parseInt(document.getElementById("num2").value);
+						const difference= parseInt(num1 - num2);
+						document.getElementById("subtraction").innerHTML="DIFFERENCE: "+difference;
+					}
+				</script>
+			</div>
+		</div>
+
+		<div class="calculating-container-2">
+				<!-- Multiplication -->
+				<div class="col-xl-6">
+					<button type="submit" id="calc" class="btn btn-info" onClick="times()"> Multiplication </button>
+					<p id="multiplication"> </p>
+						<script id="multiplication">
+							function times (parameter1, parameter2) {
+								const num1= parseInt(document.getElementById("num1").value);
+								const num2= parseInt(document.getElementById("num2").value);
+								const product= parseInt(num1 * num2);
+								document.getElementById("multiplication").innerHTML="PRODUCT: "+product;
+						}
+					</script>
+				</div>
+				<div class="col-xl-6">
+					<button type="submit" id="calc" class="btn btn-info" onClick="dividedby()"> Division </button>
+					<p id="division"> </p>
+						<script id="division">
+							function dividedby (parameter1, parameter2) {
+								const num1= parseInt (document.getElementById("num1").value);
+								const num2= parseInt(document.getElementById("num2").value);
+								const quotient= parseInt(num1/num2);
+								document.getElementById("division").innerHTML="QUOTIENT: "+quotient;
+							}
+						</script>
+				</div>
+
+		</div>
+</body>
+</html>
